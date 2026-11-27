@@ -19,6 +19,7 @@ import { usePageMeta } from "../hooks/usePageMeta";
 import { getSanitizedPaymentReference } from "../utils/paymentReference";
 import {
   CONTACT_LINK,
+  DOWNLOAD_URL,
   PRIVACY_LINK,
   PRODUCT_NAME,
   PROMPT_COUNT,
@@ -27,11 +28,8 @@ import {
   TERMS_LINK,
 } from "../config";
 
-// This page is no longer the primary post-purchase destination: SuperProfile
-// shows its own confirmation page and sends its own delivery email after
-// checkout. It is kept temporarily as a generic support/reference page while
-// the SuperProfile purchase flow is being tested, and is not linked from the
-// main customer journey.
+// Post-purchase page (/thank-you and /payment-success). pay.prodxstore.com
+// redirects here after a verified payment; it shows the download link.
 
 const SUPPORT_MAILTO =
   "mailto:prodxstoresupport@gmail.com?subject=Mega%20AI%20Prompt%20Vault%20Access%20Support";
@@ -39,13 +37,13 @@ const SUPPORT_MAILTO =
 const STEPS = [
   {
     icon: Mail,
-    title: "Check your email",
-    copy: "Look for a message containing your product-access instructions at the email address used during payment.",
+    title: "Download your files",
+    copy: "Use the Download button above. Save the ZIP and unzip it on your computer.",
   },
   {
     icon: FolderOpen,
     title: "Open your files",
-    copy: "Follow the access instructions to download and save The Mega AI Prompt Vault.",
+    copy: "Start with 00_START_HERE_Top_Picks.xlsx, then open any collection in Excel or Google Sheets.",
   },
   {
     icon: Sparkles,
@@ -118,12 +116,17 @@ export default function PaymentSuccess() {
             <p className="mt-2 text-lg font-semibold text-[#F5F5F7]">{PRODUCT_NAME}</p>
 
             <p className="mt-5 text-base text-[#B8B8C0] leading-relaxed">
-              Your product access is provided through SuperProfile and sent to the email address
-              you used during checkout.
+              Your files are ready. Download the complete vault below and keep it safe.
             </p>
+            <LinkButton
+              href={DOWNLOAD_URL}
+              aria-label="Download The Mega AI Prompt Vault"
+              className="mt-6"
+            >
+              Download the Mega AI Prompt Vault
+            </LinkButton>
             <p className="mt-3 text-sm text-[#85858E] leading-relaxed">
-              Please allow a few minutes for the email to arrive, and check your Spam or
-              Promotions folder if you do not see it.
+              Bookmark this page. Need help? Email us with your payment reference.
             </p>
 
             {paymentReference && (
@@ -187,7 +190,7 @@ export default function PaymentSuccess() {
                 </ul>
 
                 <div className="mt-6 border-t border-[#2A2A2E] pt-5">
-                  <p className="text-sm font-medium text-[#F5F5F7]">Price: Confirmed on SuperProfile</p>
+                  <p className="text-sm font-medium text-[#F5F5F7]">Price: ₹399 (one-time)</p>
                 </div>
               </Card>
             </Reveal>
@@ -207,12 +210,12 @@ export default function PaymentSuccess() {
                 <div>
                   <h2 className="text-base font-semibold text-white">Keep your payment receipt</h2>
                   <p className="mt-2 text-sm text-[#B8B8C0] leading-relaxed">
-                    Save your SuperProfile payment confirmation and receipt until you have
+                    Save your payment confirmation and receipt until you have
                     successfully received and downloaded your product.
                   </p>
                   <p className="mt-2 text-sm text-[#B8B8C0] leading-relaxed">
                     If you entered an incorrect email address during payment, contact support and
-                    include your SuperProfile order or payment reference.
+                    include your order number or payment reference.
                   </p>
                 </div>
               </div>
@@ -232,7 +235,7 @@ export default function PaymentSuccess() {
               </h2>
               <p className="mt-3 text-sm text-[#B8B8C0] leading-relaxed">
                 Contact our support team and include the email address used during checkout and
-                your SuperProfile order or payment reference.
+                your order number or payment reference.
               </p>
 
               <a

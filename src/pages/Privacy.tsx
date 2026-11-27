@@ -32,8 +32,7 @@ export default function Privacy() {
         <li>
           <strong className="text-white">Payment information.</strong> Payment is handled entirely
           by our payment partner
-          {/* EDIT: name the actual gateway(s) used, e.g. SuperProfile / Razorpay / PayPal */}{" "}
-          (SuperProfile, which may route payment through Razorpay, PayPal or a similar processor).
+          (Razorpay, via the ProdXStore checkout at pay.prodxstore.com).
           Card numbers, UPI IDs and bank details are entered directly on the payment gateway's own
           secure page — we do not receive or store your full payment details.
         </li>
