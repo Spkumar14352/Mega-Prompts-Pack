@@ -126,6 +126,11 @@ export default function PaymentSuccess() {
               Download the Mega AI Prompt Vault
             </LinkButton>
             <p className="mt-3 text-sm text-[#85858E] leading-relaxed">
+              The vault is a large file (about 110 MB). If Google Drive says it &ldquo;can&rsquo;t scan
+              this file for viruses&rdquo;, that is normal for files this size &mdash; click{" "}
+              <strong className="text-[#F5F5F7]">Download anyway</strong>.
+            </p>
+            <p className="mt-2 text-sm text-[#85858E] leading-relaxed">
               Bookmark this page. Need help? Email us with your payment reference.
             </p>
 
