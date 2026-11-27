@@ -43,7 +43,7 @@ const FAQS = [
   {
     question: "What is the refund policy?",
     answer:
-      "The purchase is covered by a 7-day money-back guarantee according to the published refund policy. If the delivered product is materially different from the description on this page, email support@prodxstore.com within seven days and include your order information. Review the full Refund Policy before purchasing.",
+      "The purchase is covered by a 7-day money-back guarantee according to the published refund policy. If the delivered product is materially different from the description on this page, email prodxstoresupport@gmail.com within seven days and include your order information. Review the full Refund Policy before purchasing.",
   },
 ];
 
