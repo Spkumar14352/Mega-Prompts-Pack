@@ -66,7 +66,7 @@ export default function RefundPolicy() {
       <h2>4. How refunds are issued</h2>
       <p>
         Approved refunds are returned to your original payment method through our payment
-        gateway (SuperProfile, which may route through Razorpay or a similar processor){" "}
+        gateway (Razorpay, via the ProdXStore checkout at pay.prodxstore.com){" "}
         {/* EDIT: name the actual gateway you use. */}. Depending on your bank or card issuer,
         it can take a few business days for the refund to appear in your account after we process
         it.

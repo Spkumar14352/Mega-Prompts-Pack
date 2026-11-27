@@ -3,9 +3,18 @@
 // Update these values before publishing the page live.
 // ============================================================
 
-// This SuperProfile product must be configured with a fixed one-time price of ₹399.
+// Shared ProdXStore checkout (Razorpay via pay.prodxstore.com). The price
+// (₹399) is set on the product in hq.prodxstore.com/store; after a verified
+// payment the buyer is redirected to /thank-you, which shows the download.
+export const CHECKOUT_URL: string = "https://pay.prodxstore.com/checkout/mega-ai-prompt-vault";
+
+// Previous SuperProfile checkout, kept for a one-line rollback.
 export const SUPERPROFILE_PRODUCT_URL: string =
   "https://superprofile.bio/vp/the-mega-ai-prompt-vault-—-launch-offer";
+
+// Google Drive download shown on /thank-you after payment.
+export const DOWNLOAD_URL: string =
+  "https://drive.google.com/file/d/14YPcyuL60iboPfVknYD9bpesR8mhsJ4e/view?usp=sharing";
 
 // Numeric prices (₹, no formatting) — the single source of truth for the
 // display strings below.
@@ -40,7 +49,7 @@ export const GUARANTEE_DAYS = 7;
 
 // Set this to true only once the SuperProfile product above has been confirmed
 // to email product-access/download instructions to buyers after checkout.
-export const SUPERPROFILE_EMAIL_DELIVERY_CONFIGURED = true;
+export const SUPERPROFILE_EMAIL_DELIVERY_CONFIGURED = false;
 
 // ------------------------------------------------------------
 // Offer countdown

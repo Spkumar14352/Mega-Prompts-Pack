@@ -12,10 +12,8 @@ import {
   COMPARE_AT_PRICE,
   PRODUCT_PRICE,
   PROMPT_COUNT,
-  SUPERPROFILE_EMAIL_DELIVERY_CONFIGURED,
-  SUPERPROFILE_PRODUCT_URL,
+  CHECKOUT_URL,
   SUPPORT_EMAIL,
-  isValidSuperProfileUrl,
 } from "../config";
 
 const BUTTON_TEXT = `Get Instant Access for ${PRODUCT_PRICE}`;
@@ -29,7 +27,7 @@ const WHATS_INCLUDED = [
 
 export default function Pricing() {
   const { isExpired } = useOfferCountdown();
-  const linkReady = isValidSuperProfileUrl(SUPERPROFILE_PRODUCT_URL);
+  const linkReady = CHECKOUT_URL.startsWith("https://pay.prodxstore.com/");
 
   return (
     <section id="pricing" className="relative overflow-hidden py-16 sm:py-24 bg-[#0D0D0F]">
@@ -86,7 +84,7 @@ export default function Pricing() {
             </div>
 
             <LinkButton
-              href={SUPERPROFILE_PRODUCT_URL}
+              href={CHECKOUT_URL}
               disabled={!linkReady}
               aria-label={`Purchase The Mega AI Prompt Vault for ${PRODUCT_PRICE}`}
               className="mt-6 w-full"
@@ -113,15 +111,11 @@ export default function Pricing() {
             <PaymentMethods className="mt-4" />
 
             <p className="mt-4 text-center text-xs text-[#85858E]">
-              {SUPERPROFILE_EMAIL_DELIVERY_CONFIGURED
-                ? "Secure checkout • Instant digital delivery • Product access by email"
-                : "Secure checkout • Instant digital delivery"}
+              Secure checkout • Instant digital delivery
             </p>
 
             <p className="mt-2 text-center text-xs text-[#85858E]">
-              {SUPERPROFILE_EMAIL_DELIVERY_CONFIGURED
-                ? "After successful payment through SuperProfile, your product access or download instructions will be displayed and sent to the email address used during checkout."
-                : "After successful payment through SuperProfile, your product access or download instructions will be displayed on the confirmation page."}
+              After a successful payment you are taken straight to your download page.
             </p>
           </div>
         </Reveal>

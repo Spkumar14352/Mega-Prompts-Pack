@@ -68,8 +68,7 @@ export default function Terms() {
       <h2>4. Payment and delivery</h2>
       <p>
         Purchases are processed through our payment partner
-        {/* EDIT: name the actual gateway(s) you use, e.g. SuperProfile / Razorpay / PayPal */}{" "}
-        (SuperProfile, which may use Razorpay or another payment processor). This is a one-time
+        (Razorpay, via the ProdXStore checkout at pay.prodxstore.com). This is a one-time
         payment — there is no recurring subscription. Delivery is instant and digital; access
         instructions are shown on the confirmation page and sent to the email address used at
         checkout.

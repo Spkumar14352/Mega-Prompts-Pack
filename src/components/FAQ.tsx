@@ -13,7 +13,7 @@ const FAQS = [
   {
     question: "How is it delivered?",
     answer:
-      "It's an instant digital download — there's nothing physical to ship. As soon as payment is confirmed, your access instructions are shown on the confirmation page and sent to the email address you used at checkout.",
+      "It's an instant digital download — there's nothing physical to ship. As soon as payment is confirmed, you're taken to your download page with the complete vault.",
   },
   {
     question: "Do I get lifetime access & updates?",
